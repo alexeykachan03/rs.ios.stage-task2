@@ -21,8 +21,14 @@
     [numbersArray sortUsingSelector:@selector(compare:)];
     [stringsArray sortUsingSelector:@selector(compare:)];
     NSMutableArray *result = [[NSMutableArray alloc] init];
-    [result addObjectsFromArray:numbersArray];
-    [result addObjectsFromArray:stringsArray];
+    if (numbersArray.count == 0) {
+            [result addObjectsFromArray:stringsArray];
+        } else if ([stringsArray count] == 0) {
+            [result addObjectsFromArray:numbersArray];
+        } else {
+            [result addObject:numbersArray];
+            [result addObject:[[stringsArray reverseObjectEnumerator] allObjects]];
+        }
     return result;
 }
 
