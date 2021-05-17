@@ -8,10 +8,10 @@
         for(int j = i + 1; j < [array count]; j++){
             if(ABS([[array objectAtIndex:i] intValue] - [[array objectAtIndex:j] intValue]) == [number intValue]){
                 count++;
-            }
-        }
-    }
+                            }
+                                }
+                                     }
     return count;
-}
+                    }
 
 @end
